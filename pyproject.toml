@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "python_test"
+version = "0.0.0"
+description = ""
+packages = [{include = "namespace", from = "src"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.11.4"
+setuptools = "^69.0.0"
+
+
+[build-system]
+requires = [ "poetry-core", "setuptools" ]
+build-backend = "poetry.core.masonry.api"
