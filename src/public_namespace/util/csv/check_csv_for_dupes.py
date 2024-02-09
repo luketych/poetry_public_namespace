@@ -1,7 +1,7 @@
 import csv
 
 
-def check_csv_for_duplicates(csv_file_path, hash_column_name):
+def check_csv_for_dupes(csv_file_path, hash_column_name):
     hash_values = set()
     duplicates = []
 
@@ -20,13 +20,13 @@ def check_csv_for_duplicates(csv_file_path, hash_column_name):
 
 
 # Example usage:
-csv_file_path = "./pipelines/google_daily/output_data/google_daily.csv"
-hash_column_name = "hash"
-duplicate_rows = check_csv_for_duplicates(csv_file_path, hash_column_name)
+# csv_file_path = "./pipelines/google_daily/output_data/google_daily.csv"
+# hash_column_name = "hash"
+# duplicate_rows = check_csv_for_dupes(csv_file_path, hash_column_name)
 
-if duplicate_rows:
-    print("Duplicate rows found:")
-    for row in duplicate_rows:
-        print(row)
-else:
-    print("No duplicate rows found.")
+# if duplicate_rows:
+#     print("Duplicate rows found:")
+#     for row in duplicate_rows:
+#         print(row)
+# else:
+#     print("No duplicate rows found.")
