@@ -2,7 +2,7 @@
 name = "python_test"
 version = "0.0.0"
 description = ""
-packages = [{include = "namespace", from = "src"}]
+packages = [{include = "public_namespace", from = "src"}]
 authors = ["Aaron Landers <mrlanderson69@gmail.com>"]
 
 
