@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python_test"
+name = "python_public_namespace"
 version = "0.0.0"
 description = ""
 packages = [{include = "public_namespace", from = "src"}]
