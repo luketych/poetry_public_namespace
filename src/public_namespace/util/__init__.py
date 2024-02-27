@@ -6,6 +6,9 @@ from .csv.split_csv_row import split_csv_row
 from .csv.write_data_to_csv import write_data_to_csv
 
 
+from .neon.bulk_delete import bulk_delete as neon_bulk_delete
+
+
 from .sql.check_table_exists import check_table_exists
 from .sql.copy_from_to_table import copy_from_to_table
 from .sql.execute_sql_query import execute_sql_query
