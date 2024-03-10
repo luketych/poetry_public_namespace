@@ -5,16 +5,20 @@ import psycopg2
 from termcolor import colored
 
 
-def batchSQLcopy(conn, table_name, pd_df, chunk_size=1000):
+def batchSQLcopyFromPandas(conn, table_name, df, chunk_size=1000):
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("Input dataframe must be a Pandas DataFrame.")
+    
+  
     pg_cursor = conn.cursor()
 
     # Prepare DataFrame for COPY
-    pd_df.insert(0, 'created_at', '1970-01-01T00:00:00Z')
-    pd_df.insert(1, 'updated_at', '1970-01-01T00:00:00Z')
+    df.insert(0, 'created_at', '1970-01-01T00:00:00Z')
+    df.insert(1, 'updated_at', '1970-01-01T00:00:00Z')
 
     # Write DataFrame to StringIO
     output = StringIO()
-    pd_df.to_csv(output, sep=',', header=False, index=False)
+    df.to_csv(output, sep=',', header=False, index=False)
     output.seek(0)
 
     # Read StringIO line by line in chunks and perform COPY operation
@@ -40,7 +44,7 @@ def batchSQLcopy(conn, table_name, pd_df, chunk_size=1000):
         finally:
             lines = output.readlines(chunk_size)
 
-    print(f"Finished running batchPandasSQLcopy(): {len(pd_df)} rows into {table_name}")
+    print(f"Finished running batchSQLcopyFromPandas(): {len(df)} rows into {table_name}")
 
     pg_cursor.close()
     

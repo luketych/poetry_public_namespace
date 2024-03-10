@@ -7,6 +7,8 @@ from .csv.write_data_to_csv import write_data_to_csv
 
 
 from .neon.bulk_delete import bulk_delete as neon_bulk_delete
+from .neon.batchSQLcopyFromPandas import batchSQLcopyFromPandas
+from .neon.batchSQLcopyFromPolars import batchSQLcopyFromPolars
 
 
 from .sql.check_table_exists import check_table_exists
@@ -18,7 +20,6 @@ from .sql.is_table_correct import is_table_correct
 
 from .supabase.batch_insert import batch_insert
 from .supabase.batchCopyFromStringIO import batchCopyFromStringIO
-from .supabase.batchSQLcopy import batchSQLcopy
 from .supabase.bulk_delete import bulk_delete
 from .supabase.bulk_delete2 import bulk_delete2
 from .supabase.bulk_fetch import bulk_fetch
